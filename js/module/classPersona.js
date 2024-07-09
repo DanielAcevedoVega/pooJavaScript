@@ -1,4 +1,4 @@
-class Persona{
+export class Persona{
     nombre;
     edad;
     sexo;
@@ -26,6 +26,7 @@ class Persona{
         return this.sexo;
     }
     saludar(){
-        return `Hola usuario ${this.nombre}`
+        return `Saludo usari@ ${this.nombre} que tiene ${this.edad} años y genero ${this.sexo}`
     }
 }
+

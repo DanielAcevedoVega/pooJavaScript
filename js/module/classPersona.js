@@ -25,8 +25,29 @@ export class Persona{
     get getSexo(){
         return this.sexo;
     }
-    saludar(){
+    get getSaludar(){
         return `Saludo usari@ ${this.nombre} que tiene ${this.edad} años y genero ${this.sexo}`
+    }
+    static esMayorDeEdad(edad){
+        if(edad >= 18){
+            return `${edad} años es mayor de edad`
+        } else{
+            return `${edad} años es menor de edad`
+        }
     }
 }
 
+
+export class Estudiante extends Persona{
+    carrera;
+    constructor(nombre, edad, sexo, carrera){
+        super(nombre, edad, sexo);
+        this.carrera = carrera;
+    }
+    get getSaludar(){
+        return `Saludo usari@ ${this.nombre} que tiene ${Persona.esMayorDeEdad(this.edad)} y genero ${this.sexo}`
+    }
+    get getEstudiar(){
+        return `Su carrera es ${this.carrera}`
+    }
+}
